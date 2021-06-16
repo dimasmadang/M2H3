@@ -24,12 +24,14 @@ Output: "Halo Abduh, Selamat Datang di Sanbercode!"
 */
 
 // Code function di sini
-
+function greetings($kalimat){
+echo "Halo $kalimat, Selamat Datang di Sanbercode! <br>";
+}
 
 // Hapus komentar untuk menjalankan code!
-// greetings("Bagas");
-// greetings("Wahyu");
-// greetings("Abdul");
+ greetings("Bagas");
+ greetings("Wahyu");
+ greetings("Abdul");
 
 echo "<br>";
 
@@ -47,12 +49,24 @@ Output: ludba
 */
 
 // Code function di sini 
+function reverse($kalimat){
+    $length = strlen($kalimat);
+    $tampung = '';
+    for ($i=($length-1); $i >=0; $i--){
+        $tampung .= $kalimat[$i];
+    }
+    return $tampung;
+}
 
+function reverseString($kata){
+    $output = reverse($kata);
+    echo $output."<br>";
+}
 
 // Hapus komentar di bawah ini untuk jalankan Code
-// reverseString("abduh");
-// reverseString("Sanbercode");
-// reverseString("We Are Sanbers Developers")
+reverseString("abduh");
+reverseString("Sanbercode");
+reverseString("We Are Sanbers Developers");
 echo "<br>";
 
 echo "<h3>Soal No 3 Palindrome </h3>";
@@ -72,12 +86,21 @@ NB: DILARANG menggunakan built-in function PHP seperti strrev() dll. Gunakan loo
 
 
 // Code function di sini
-
+function palindrome($kata2){
+    $balik = reverse($kata2);
+    if ($kata2 == $balik){
+        echo "$kata2 => True";
+    }
+    else {
+        echo "$kata2 => False";
+    } echo "<br>";
+}
+    
 // Hapus komentar di bawah ini untuk jalankan code
-// palindrome("civic") ; // true
-// palindrome("nababan") ; // true
-// palindrome("jambaban"); // false
-// palindrome("racecar"); // true
+palindrome("civic") ; // true
+palindrome("nababan") ; // true
+palindrome("jambaban"); // false
+palindrome("racecar"); // true
 
 
 echo "<h3>Soal No 4 Tentukan Nilai </h3>";
@@ -90,12 +113,27 @@ sama dengan 60 dan lebih kecil dari 70 maka akan mereturn string “Cukup” sel
 */
 
 // Code function di sini
+function tentukan_nilai($angka){
+    $aa='';
+    if ($angka >= 85 && $angka <= 100) {
+        $aa .= "Sangat Baik";
+        }    elseif ($angka >= 70 && $angka < 85) {
+            $aa .= "Baik";
+        }    elseif ($angka >= 60 && $angka < 70) {
+                $aa .= "cukup";
+               
+            } else{
+            $aa .= "Kurang";
+            }
+           
+    return $aa ."<br>";
+        }
 
 // Hapus komentar di bawah ini untuk jalankan code
-// echo tentukan_nilai(98); //Sangat Baik
-// echo tentukan_nilai(76); //Baik
-// echo tentukan_nilai(67); //Cukup
-// echo tentukan_nilai(43); //Kurang
+echo tentukan_nilai(98); //Sangat Baik
+echo tentukan_nilai(76); //Baik
+echo tentukan_nilai(67); //Cukup
+echo tentukan_nilai(43); //Kurang
 
 
 ?>
